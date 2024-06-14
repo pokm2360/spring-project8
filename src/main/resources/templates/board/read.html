@@ -36,8 +36,8 @@
         <a th:href="@{/board/modify(no = ${dto.no})}">
         	<button type="button" class="btn btn-primary">수정</button>
         </a>
-
-        <a th:href="@{/board/list}">
+		<!-- 상세페이지에서 목록으로 돌아갔을 때 해당 페이지가 있는 목록으로 이동하는 기능 list() -->
+        <a th:href="@{/board/list(page=${page}) }">
         	<button type="button" class="btn btn-info">목록으로</button>
         </a>
 

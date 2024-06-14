@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,7 +34,7 @@ public class Board extends BaseEntity {
     @Column(length = 1500, nullable = false)
     String content; //내용
 
-    @Column(length = 50, nullable = false)
-    String writer; //작성자
-
+//  부모인 Member 테이블의 pk를 참조하게됨
+    @ManyToOne //관계차수는 1:N
+    Member writer; //작성자
 }

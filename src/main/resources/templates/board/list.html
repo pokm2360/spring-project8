@@ -25,7 +25,7 @@
 			<tbody>
 				<tr th:each="dto : ${list}">
 					<th>
-						<a th:href="@{/board/read(no = ${dto.no})}">[[${dto.no}]]</a> 
+						<a th:href="@{/board/read(no = ${dto.no}, page=${list.number+1} )}">[[${dto.no}]]</a> 
 					</th>
 					<td>[[${dto.title}]]</td>
 					<td>[[${dto.writer}]]</td>
@@ -81,14 +81,14 @@
 			</th:block>
 		</ul>
 
-      <!--   <script th:inline="javascript">
+        <script th:inline="javascript">
                     $(document).ready(function(){
                       var msg = [[${msg}]];
                       if(msg != null){
                           alert(msg + "번 글이 등록되었습니다.");
                       }
                     });
-        </script> -->
+        </script>
 
 	</th:block>
 

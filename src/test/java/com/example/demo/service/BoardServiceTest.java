@@ -16,14 +16,22 @@ public class BoardServiceTest {
 	BoardService service;
 
 	@Test
-	public void 게시물등록() {
+	public void 게시물등록1() {
 		BoardDTO dto = BoardDTO.builder()
-						.title("2번글").content("내용입니다").writer("또치")
+						.title("2번글").content("내용입니다").writer("user1")
 						.build();
 		int no = service.register(dto);
 		System.out.println("새로운 게시물 번호: " + no);
 	}
-
+	
+//	@Test
+//	public void 게시물등록2() {
+//		BoardDTO dto = BoardDTO.builder()
+//						.title("2번글").content("내용입니다").writer(member)
+//						.build();
+//		int no = service.register(dto);
+//		System.out.println("새로운 게시물 번호: " + no);
+//	}
 	@Test
 	public void 게시물목록조회() {
 //		List<BoardDTO> list = service.getList();
