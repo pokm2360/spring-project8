@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,6 +25,15 @@ public class MemberRepositoryTest {
 								.password("1234")
 								.build();
 		repository.save(member);
+	}
+	
+	@Test
+	public void 회원일괄등록() {
+		List<Member> list = new ArrayList<>();
+		for(int i=1; i<31;i++) {
+			list.add(new Member("user"+i,"1234","둘리"));
+		}
+		repository.saveAll(list);
 	}
 	
 	@Test

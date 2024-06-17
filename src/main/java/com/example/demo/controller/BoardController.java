@@ -20,11 +20,6 @@ public class BoardController {
     @Autowired
     BoardService service;
 
-    // 메인화면
-    @GetMapping("/main")
-    public void main() {
-    }
-
     // 목록화면
     @GetMapping("/list")           // 사용자가 파라미터를 보내지 않으면 첫번째 페이지로
     public void list(@RequestParam(defaultValue = "0", name = "page") int page, Model model) {

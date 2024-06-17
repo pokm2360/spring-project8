@@ -27,4 +27,21 @@ public class MemberServiceTest {
 			System.out.println(dto);
 		}
 	}
+	
+	@Test
+	public void 회원등록() {
+		
+		MemberDTO dto = MemberDTO.builder()
+								.id("user33")
+								.name("둘리")
+								.password("1234")
+								.build();
+		boolean isSuccess = service.register(dto);	
+		
+		if (isSuccess) {
+			System.out.println("사용 가능한 아이디입니다.");
+		} else {
+			System.out.println("사용 중인 아이디입니다.");
+		}
+	}
 }
